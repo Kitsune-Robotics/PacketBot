@@ -43,7 +43,7 @@ def callback(packet):
 
         webhook = DiscordWebhook(
             url=os.environ["WEBHOOK"],
-            content=f"New update from {packet['from']}!\nLocation: http://maps.google.com/maps?z=12&t=m&q=loc:{packet['latitude']}+{packet['longitude']}\nVolt: {packet['comment'].split()[1]}\nTemp: {packet['comment'].split()[2]}",
+            content=f"New update from {packet['from']}!\nPacket: https://aprs.fi/#!call=a%2F{packet['from']}&timerange=3600&tail=3600\nLocation: http://maps.google.com/maps?z=12&t=m&q=loc:{packet['latitude']}+{packet['longitude']}\nVolt: {packet['comment'].split()[1]}\nTemp: {packet['comment'].split()[2]}",
         )
         response = webhook.execute()
 
