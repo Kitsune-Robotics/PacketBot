@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  Packet-Bot:
+    restart: always
+    environment:
+      WEBHOOK: "secret"
+    build: .
+    image: kenwoodfox/packetbot:v1
+    networks:
+      - default
